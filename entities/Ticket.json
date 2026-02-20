@@ -1,0 +1,128 @@
+{
+  "name": "Ticket",
+  "type": "object",
+  "properties": {
+    "emission_id": {
+      "type": "string",
+      "description": "Unique emission ID for the ticket"
+    },
+    "passenger_name": {
+      "type": "string",
+      "description": "Full name of the passenger"
+    },
+    "passenger_email": {
+      "type": "string",
+      "description": "Email of the passenger"
+    },
+    "passenger_document": {
+      "type": "string",
+      "description": "Passport or ID number"
+    },
+    "airline": {
+      "type": "string",
+      "enum": [
+        "LATAM",
+        "GOL",
+        "Azul",
+        "Avianca",
+        "TAP",
+        "Emirates",
+        "American Airlines",
+        "Delta",
+        "United",
+        "Air France",
+        "Lufthansa",
+        "British Airways",
+        "Qatar Airways",
+        "Turkish Airlines",
+        "Iberia"
+      ],
+      "description": "Airline company"
+    },
+    "flight_code": {
+      "type": "string",
+      "description": "Flight code (e.g. LA1234)"
+    },
+    "origin": {
+      "type": "string",
+      "description": "Origin airport code (e.g. GRU)"
+    },
+    "origin_city": {
+      "type": "string",
+      "description": "Origin city name"
+    },
+    "destination": {
+      "type": "string",
+      "description": "Destination airport code (e.g. GIG)"
+    },
+    "destination_city": {
+      "type": "string",
+      "description": "Destination city name"
+    },
+    "departure_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Departure date"
+    },
+    "departure_time": {
+      "type": "string",
+      "description": "Departure time (HH:MM)"
+    },
+    "arrival_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Arrival date"
+    },
+    "arrival_time": {
+      "type": "string",
+      "description": "Arrival time (HH:MM)"
+    },
+    "seat": {
+      "type": "string",
+      "description": "Seat number"
+    },
+    "cabin_class": {
+      "type": "string",
+      "enum": [
+        "Econ\u00f4mica",
+        "Econ\u00f4mica Premium",
+        "Executiva",
+        "Primeira Classe"
+      ],
+      "default": "Econ\u00f4mica"
+    },
+    "fare_amount": {
+      "type": "number",
+      "description": "Fare amount in BRL"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "valido",
+        "pendente",
+        "cancelado",
+        "embarcado",
+        "expirado"
+      ],
+      "default": "pendente",
+      "description": "Ticket status"
+    },
+    "baggage_included": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether baggage is included"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Additional notes or observations"
+    }
+  },
+  "required": [
+    "passenger_name",
+    "airline",
+    "flight_code",
+    "origin",
+    "destination",
+    "departure_date"
+  ]
+}

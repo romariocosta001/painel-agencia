@@ -1,0 +1,70 @@
+{
+  "name": "FareRule",
+  "type": "object",
+  "properties": {
+    "airline": {
+      "type": "string",
+      "enum": [
+        "LATAM",
+        "GOL",
+        "Azul",
+        "Avianca",
+        "TAP",
+        "Emirates",
+        "American Airlines",
+        "Delta",
+        "United",
+        "Air France",
+        "Lufthansa",
+        "British Airways",
+        "Qatar Airways",
+        "Turkish Airlines",
+        "Iberia"
+      ],
+      "description": "Airline company"
+    },
+    "rule_type": {
+      "type": "string",
+      "enum": [
+        "cancelamento",
+        "remarcacao",
+        "bagagem",
+        "reembolso",
+        "upgrade"
+      ],
+      "description": "Type of fare rule"
+    },
+    "cabin_class": {
+      "type": "string",
+      "enum": [
+        "Econ\u00f4mica",
+        "Econ\u00f4mica Premium",
+        "Executiva",
+        "Primeira Classe"
+      ],
+      "default": "Econ\u00f4mica"
+    },
+    "description": {
+      "type": "string",
+      "description": "Detailed description of the rule"
+    },
+    "fee_amount": {
+      "type": "number",
+      "description": "Fee amount if applicable"
+    },
+    "deadline_hours": {
+      "type": "number",
+      "description": "Hours before departure for the rule to apply"
+    },
+    "is_allowed": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether this action is allowed"
+    }
+  },
+  "required": [
+    "airline",
+    "rule_type",
+    "description"
+  ]
+}
